@@ -1,12 +1,29 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Human {
     String name;
-    Gender gender;
-    String birthDate, deathDate;
-    List<Human> parents;
-    List<Human> children;
-    Integer id;
+      Gender gender;
+     LocalDate birthDate, deathDate;
+     List<Human> parents;
+     List<Human> children;
+     Integer id;
+
+
+    public Human(String name, Gender gender, LocalDate birthDate, LocalDate deathDate,
+                 List<Human> parents, List<Human> children, Integer id) {
+        this.name = name;
+        this.gender = gender;
+        this.birthDate = birthDate;
+        this.deathDate = deathDate;
+        parents = new ArrayList<>();
+        children = new ArrayList<>();
+        this.id = id;
+    }
+
+    public Human() {
+    }
 
     public String getName() {
         return name;
@@ -16,11 +33,11 @@ public class Human {
         return gender;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public String getDeathDate() {
+    public LocalDate getDeathDate() {
         return deathDate;
     }
 
@@ -36,21 +53,11 @@ public class Human {
         return id;
     }
 
-    public Human(String name, Gender gender, String birthDate, String deathDate, List<Human> parents, List<Human> children, Integer id) {
-        this.name = name;
-        this.gender = gender;
-        this.birthDate = birthDate;
-        this.deathDate = deathDate;
-        this.id = id;
-    }
 
-    public Human() {
-    }
 
 
     @Override
     public String toString() {
-        return "id: " + id + ", " + "name: " + name + ", " + "gender: " + gender + ", " +
-                "birthDate: " + birthDate + ", " + "deathDate: " + deathDate + " |";
+        return STR."id: \{id}, name: \{name}, gender: \{gender}, birthDate: \{birthDate}, deathDate: \{deathDate} |";
     }
 }
